@@ -2514,11 +2514,14 @@ a:hover {
 hero slider
 --------------------------------------------------------------*/
 .wpo-hero-section-1 {
-  background: url(../images/destapaciones/fondo.png) no-repeat right center;
-  height: 1050px;
+  background: url(../images/destapaciones/fondo.png) no-repeat center center;
+  background-size: cover; /* 🔹 hace que la imagen cubra toda la pantalla */
+  background-attachment: scroll; /* o 'fixed' si querés efecto parallax */
+  height: 100vh; /* 🔹 ocupa el 100% de la altura visible del navegador */
   position: relative;
   display: block;
 }
+
 .wpo-hero-section-1:before {
   display: none;
 }
