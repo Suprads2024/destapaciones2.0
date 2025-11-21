@@ -2547,7 +2547,16 @@ a:hover {
   .wpo-hero-section-text {
     padding-top:20px;
   }
+  .arrival-text{
+    font-size: 16px;
+  }
 
+  .wpo-hero-section-1{
+           height: 550px!important;
+  }
+.checks-list li{
+  font-size: 15px;
+}
   .brand-group{
     margin-left: -20px;
   }
