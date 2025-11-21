@@ -1,0 +1,325 @@
+/* Sección ¿Por qué elegirnos? */
+.why-us-section {
+    padding: 40px 0;
+    background: hsl(214, 54%, 97%);        /* fondo claro tipo landing */
+    color: #0b1b2b;
+}
+
+.why-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Título */
+.why-title {
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #0b1b2b;            /* azul muy oscuro / casi negro */
+    text-align: left;
+}
+
+.why-title span {
+    color: #2fb6ff;            /* celeste similar al “Destapaciones” del hero */
+}
+
+/* Grid de beneficios */
+.why-benefits-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px 40px;
+}
+
+/* Ítems */
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 17px;
+    color: #223047;
+}
+
+/* Icono ✔ en círculo */
+.benefit-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: #e3f3ff;       /* fondo celeste muy suave */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1988ff;            /* azul fuerte */
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .why-us-section {
+        padding: 50px 0;
+    }
+
+    .why-title {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .why-layout {
+        padding: 0 15px;
+    }
+
+    .why-benefits-grid {
+        gap: 14px 20px;
+    }
+
+    .benefit-item {
+        justify-content: flex-start;
+    }
+}
+
+
+
+/* SECCIÓN - Cómo trabajamos */
+.how-work-section {
+    padding: 10px 0px 60px;
+    background: #ffffff;
+    color: #0b1b2b;
+}
+
+.how-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    color: #0b1b2b;
+}
+
+/* Contenedor de los pasos */
+.how-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Cada tarjeta / paso */
+.step-item {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Ícono minimalista */
+.step-icon {
+    font-size: 42px;
+    color: #2fb6ff; /* azul celeste tuyo */
+    margin-bottom: 18px;
+}
+
+/* Títulos de pasos */
+.step-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #0b1b2b;
+}
+
+/* Descripción */
+.step-item p {
+    font-size: 16px;
+    color: #4a5b6d;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .how-title {
+        font-size: 28px;
+    }
+
+    .step-item h3 {
+        font-size: 18px;
+    }
+}
+
+
+
+/* SECCIÓN TESTIMONIOS */
+.testimonials-section {
+    padding: 80px 0;
+    background: #f5f8fc; /* fondo claro suave */
+    color: #0b1b2b;
+}
+
+.testimonials-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #0b1b2b;
+}
+
+/* Grid de tarjetas */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Tarjeta individual */
+.testimonial-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 22px 24px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estrellas */
+.testimonial-stars {
+    font-size: 18px;
+    color: #ffc94a; /* dorado suave para las estrellas */
+}
+
+/* Texto del testimonio */
+.testimonial-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #223047;
+}
+
+/* Autor */
+.testimonial-author {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2fb6ff; /* celeste de tu marca */
+    margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .testimonials-section {
+        padding: 60px 0;
+    }
+
+    .testimonials-title {
+        font-size: 26px;
+    }
+}
+
+
+
+
+/* SECCIÓN 6 — Cobertura CABA */
+
+.coverage-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: #ffffff;
+}
+
+.coverage-subtitle {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 35px;
+}
+
+/* Grid de barrios */
+.coverage-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.coverage-badges span {
+    background: #ffffff;          /* celeste MUY suave */
+    border: 1px solid #ffffff;     /* borde sutil azul claro */
+    color: #0b1b2b;                /* azul oscuro consistente con tu landing */
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+    transition: 0.2s ease;
+}
+
+.coverage-badges span:hover {
+    background: #d6ecff;
+    border-color: #b8dcff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .coverage-title {
+        font-size: 28px;
+    }
+    .coverage-subtitle {
+        font-size: 16px;
+    }
+    .coverage-badges span {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+}
+/* Título CTA Final */
+.cta-final-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 28px;
+    color: #000000; /* blanco fuerte */
+    text-align: center;
+}
+
+/* Contenedor de Botones */
+.cta-final-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* Estilos generales */
+.cta-final-btn {
+    padding: 14px 26px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s ease;
+}
+
+
+
+/* Botón WhatsApp */
+.whatsapp-btn {
+    background: #25d366;
+}
+.whatsapp-btn:hover {
+    background: #1ebe58;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cta-final-title {
+        font-size: 28px;
+    }
+}
