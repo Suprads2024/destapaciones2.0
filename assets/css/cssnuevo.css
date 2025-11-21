@@ -1,3 +1,22 @@
+.manual-numbers-inline {
+    display: flex;
+    justify-content: center;
+    gap: 28px; /* separación entre ambos */
+    margin-top: 14px;
+    font-size: 22px;
+    flex-wrap: wrap; /* por si en mobile no entra */
+}
+
+/* Texto general */
+.manual-numbers-inline span {
+    color: #e8f1ff; /* blanco suave con buen contraste */
+}
+
+/* Etiquetas (Teléfono / WhatsApp) */
+.manual-numbers-inline strong {
+    color: #2fb6ff; /* celeste brillante de tu marca */
+    font-weight: 700;
+}
 /* Sección ¿Por qué elegirnos? */
 .why-us-section {
     padding: 40px 0;
