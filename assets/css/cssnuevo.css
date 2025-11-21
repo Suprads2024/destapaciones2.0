@@ -3,7 +3,7 @@
     justify-content: center;
     gap: 28px; /* separación entre ambos */
     margin-top: 14px;
-    font-size: 22px;
+    font-size: 20px;
     flex-wrap: wrap; /* por si en mobile no entra */
 }
 
@@ -17,6 +17,8 @@
     color: #2fb6ff; /* celeste brillante de tu marca */
     font-weight: 700;
 }
+
+
 /* Sección ¿Por qué elegirnos? */
 .why-us-section {
     padding: 40px 0;
@@ -232,6 +234,10 @@
 
     .testimonials-title {
         font-size: 26px;
+    }
+
+    .manual-numbers-inline{
+        display: none;
     }
 }
 
