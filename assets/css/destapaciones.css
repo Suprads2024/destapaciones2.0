@@ -386,10 +386,8 @@
 
     .btn-urgencias,
     .btn-whatsapp {
-        width: 100%;
-        min-width: unset;
-        padding: 14px 18px;
-        font-size: 17px;
+   
+        display: none;
     }
 
     .payment-badge {
