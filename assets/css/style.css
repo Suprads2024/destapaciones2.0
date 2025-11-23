@@ -7141,7 +7141,7 @@ hero slider
   margin: 0 auto;
 }
 .wpo-hero-section-text {
-    margin-top: -200px; /* Podés ajustar entre -50 y -120 */
+    margin-top: -150px; /* Podés ajustar entre -50 y -120 */
 }
 @media (max-width:950px){
   .wpo-hero-section-text {
