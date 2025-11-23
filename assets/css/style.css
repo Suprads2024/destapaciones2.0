@@ -3270,7 +3270,7 @@ hero slider
 .wpo-features-section,
 .wpo-features-section-s2 {
   background: #fff;
-  margin-top: -150px;
+
   z-index: 99;
   position: relative;
   z-index: 1;
@@ -7140,7 +7140,14 @@ hero slider
   text-align: center;
   margin: 0 auto;
 }
-
+.wpo-hero-section-text {
+    margin-top: -200px; /* Podés ajustar entre -50 y -120 */
+}
+@media (max-width:950px){
+  .wpo-hero-section-text {
+      margin: 0 auto;
+}
+}
 /* ----- TÍTULO ----- */
 .wpo-hero-title h2 {
   color: #fff;
