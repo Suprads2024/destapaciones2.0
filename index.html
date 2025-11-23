@@ -33,18 +33,14 @@
     <meta property="og:description"
         content="Destapaciones de cañerías, cloacas e inodoros sin romper. Máquinas profesionales, móviles en toda CABA y atención inmediata 24 hs.">
     <meta property="og:site_name" content="Servicios de Destapaciones en Zona Norte">
-    <meta property="og:image"
-        content="https://www.servicios-destapaciones.com.ar/assets/images/destapaciones/og-capital-federal.jpg">
-    <meta property="og:image:secure_url"
-        content="https://www.servicios-destapaciones.com.ar/assets/images/destapaciones/og-capital-federal.jpg">
 
-    <!-- TWITTER CARD -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Destapaciones en Zona Norte (CABA) | Servicio Urgente 24 hs">
-    <meta name="twitter:description"
-        content="Servicio urgente de destapaciones en todos los barrios de CABA. Sin romper, con atención inmediata y máquinas eléctricas.">
-    <meta name="twitter:image"
-        content="https://www.servicios-destapaciones.com.ar/assets/images/destapaciones/og-capital-federal.jpg">
+    <!-- Preload HERO mobile (LCP en test mobile) -->
+    <link rel="preload" as="image" href="assets/images/destapaciones/fondocelular2.webp"
+        imagesrcset="assets/images/destapaciones/fondocelular2.webp" media="(max-width: 500px)" type="image/webp">
+
+    <!-- Preload HERO desktop -->
+    <link rel="preload" as="image" href="assets/images/destapaciones/fondo2.webp"
+        imagesrcset="assets/images/destapaciones/fondo2.webp" imagesizes="100vw" type="image/webp">
 
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/png" href="assets/images/destapaciones/iso-favicon.png">
@@ -225,7 +221,8 @@
                 <source media="(max-width: 500px)" srcset="assets/images/destapaciones/fondocelular2.webp">
 
                 <!-- Imagen para DESKTOP -->
-                <img src="assets/images/destapaciones/fondo2.webp" alt="Destapaciones Zona Norte" class="hero-bg-img">
+                <img src="assets/images/destapaciones/fondo2.webp" alt="Destapaciones Zona Norte" class="hero-bg-img"
+                    width="1080" height="1920" loading="eager" decoding="async">
             </picture>
             <!-- ⭐ FIN IMÁGENES -->
 
