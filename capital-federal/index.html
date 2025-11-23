@@ -1545,6 +1545,26 @@
 <link href="../assets/css/style.css" rel="stylesheet">
 <link href="../assets/css/cssnuevo.css" rel="stylesheet">
 <link href="../assets/css/responsive.css" rel="stylesheet">
+
+
+<!-- 🔹 CSS NO CRÍTICO (se precarga y aplica cuando termina) -->
+<link rel="preload"
+      href="../assets/css/style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="../assets/css/style.css"></noscript>
+
+<link rel="preload"
+      href="../assets/css/cssnuevo.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="../assets/css/cssnuevo.css"></noscript>
+
+<link rel="preload"
+      href="../assets/css/responsive.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="../assets/css/responsive.css"></noscript>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
@@ -2115,6 +2135,9 @@
                             <span>Colegiales</span>
                         </div>
 
+                        <p class="coverage-note">
+                            ¿No ves tu barrio? Igual cubrimos toda CABA y GBA. Consultanos.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -2222,9 +2245,7 @@
                 <!-- Col 1: Logo -->
                 <div class="col col-lg-4 col-md-6 col-sm-12">
                     <div class="widget about-widget">
-                        <div class="logo widget-title">
-                            <img src="../assets/images/destapaciones/iso-favicon.png" alt="logo">
-                        </div>
+                      
                         <p>
                             Somos especialistas en destapaciones de cañerías y cloacas.
                             Atendemos hogares, comercios y consorcios. Servicio rápido,

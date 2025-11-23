@@ -1544,6 +1544,29 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/cssnuevo.css" rel="stylesheet">
        <link href="assets/css/responsive.css" rel="stylesheet">
+       <!-- 🔹 CSS CRÍTICO (se carga normal, no diferido) -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/destapaciones.css">
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+<!-- 🔹 CSS NO CRÍTICO (se precarga y aplica cuando termina) -->
+<link rel="preload"
+      href="assets/css/style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+
+<link rel="preload"
+      href="assets/css/cssnuevo.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/css/cssnuevo.css"></noscript>
+
+<link rel="preload"
+      href="assets/css/responsive.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/css/responsive.css"></noscript>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 

@@ -52,12 +52,71 @@
     <link rel="preload" as="image" href="assets/images/destapaciones/fondo2.webp"
         imagesrcset="assets/images/destapaciones/fondo2.webp" imagesizes="100vw" type="image/webp">
     <title> Servicio de Destapaciones</title>
-    
 
-<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/css/font-awesome.min.css" rel="stylesheet">
-<link href="assets/css/destapaciones.css" rel="stylesheet">
-   <style id="critical-css">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/destapaciones.css" rel="stylesheet">
+    <style id="critical-css">
+        /* ===== PRELOADER ===== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #050915;           /* fondo oscuro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#preloader .loader-inner {
+  text-align: center;
+}
+
+#preloader .loader-logo img {
+  width: 70px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+#preloader .loader-logo span {
+  display: block;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+
+/* Spinner */
+.loader-spinner {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.25);
+  border-top-color: #25D366;        /* verde tipo WhatsApp */
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 12px;
+}
+
+.loader-text {
+  color: #a8b2c8;
+  font-size: 14px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
         /* === ESTILO GENERAL DE LOS BOTONES FLOTANTES === */
         .floating-buttons {
             position: fixed;
@@ -1546,11 +1605,31 @@
             }
         }
     </style>
-    
-<link href="assets/css/style.css" rel="stylesheet">
-<link href="assets/css/cssnuevo.css" rel="stylesheet">
-<link href="assets/css/responsive.css" rel="stylesheet">
- 
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/cssnuevo.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+
+    <!-- 🔹 CSS CRÍTICO (se carga normal, no diferido) -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/destapaciones.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <!-- 🔹 CSS NO CRÍTICO (se precarga y aplica cuando termina) -->
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </noscript>
+
+    <link rel="preload" href="assets/css/cssnuevo.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/cssnuevo.css">
+    </noscript>
+
+    <link rel="preload" href="assets/css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/responsive.css">
+    </noscript>
+
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
@@ -1559,6 +1638,20 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54HVD5X" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+      <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="loader-inner">
+            <div class="loader-logo">
+                <img src="assets/images/destapaciones/iso-favicon.png" alt="Logo Destapaciones">
+                <span>Destapaciones Zona Norte</span>
+            </div>
+            <div class="loader-spinner"></div>
+            <p class="loader-text">Cargando sitio...</p>
+        </div>
+    </div>
+
+
     <!-- 🔹 Botones flotantes -->
     <div class="floating-buttons">
         <a href="tel:1141609950" class="float-btn call-float">
@@ -1729,7 +1822,7 @@
                             <div class="rating-stars">★★★★★</div>
 
                             <p class="arrival-text">
-                                Llegamos en 20–40 minutos. Móviles activos en toda CABA.
+                                Llegamos en 20–40 minutos. Móviles activos en toda Zona Norte.
                             </p>
 
                             <div class="cta-block">
@@ -1926,7 +2019,7 @@
 
 
                     <h1 class="hero-service__title">
-                        Destapaciones con Máquina en <span>CABA</span> y Gran Buenos Aires
+                        Destapaciones con Máquina en <span>Zona Norte</span>, CABA y Gran Buenos Aires
                     </h1>
 
                     <p class="hero-service__lead">
@@ -2011,7 +2104,7 @@
                                 <h2><a href="#">Destapación de cañerías</a></h2>
                                 <p>Destapamos cañerías internas de cocina, baño, lavaderos y pluviales.
                                     Trabajamos con máquina profesional, sin romper pisos ni paredes, con atención
-                                    inmediata en toda CABA.</p>
+                                    inmediata en toda Zona Norte.</p>
                             </div>
                         </div>
                     </div>
@@ -2027,7 +2120,7 @@
                                 <h2><a href="#">Destapación de cloacas</a></h2>
                                 <p>Destapamos cloacas y cámaras cloacales con maquinaria eléctrica de alta potencia.
                                     Ideal para cloaca tapada, rebalses y obstrucciones complejas, con servicio
-                                    profesional en toda CABA.</p>
+                                    profesional en toda Zona Norte.</p>
                             </div>
                         </div>
                     </div>
@@ -2100,7 +2193,7 @@
                         <h2 class="coverage-title">Cobertura en toda Zona Norte</h2>
 
                         <p class="coverage-subtitle">
-                            Atendemos en los principales barrios de CABA con móviles propios distribuidos
+                            Atendemos en los principales barrios de Zona Norte con móviles propios distribuidos
                             estratégicamente.
                         </p>
 
@@ -2118,7 +2211,9 @@
                             <span>San Telmo</span>
                             <span>Colegiales</span>
                         </div>
-
+                        <p class="coverage-note">
+                            ¿No ves tu barrio? Igual cubrimos toda Zona Norte, CABA y GBA. Consultanos.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -2226,9 +2321,7 @@
                         <!-- Col 1: Logo -->
                         <div class="col col-lg-4 col-md-6 col-sm-12">
                             <div class="widget about-widget">
-                                <div class="logo widget-title">
-                                    <img src="assets/images/destapaciones/iso-favicon.png" alt="logo">
-                                </div>
+                                
                                 <p>
                                     Somos especialistas en destapaciones de cañerías y cloacas.
                                     Atendemos hogares, comercios y consorcios. Servicio rápido,
@@ -2336,6 +2429,16 @@
             }
         });
     </script>
+
+    <script>
+  window.addEventListener("load", function () {
+    var preloader = document.getElementById("preloader");
+    if (preloader) {
+      preloader.classList.add("hidden");
+    }
+  });
+</script>
+
     <!-- All JavaScript files
     ================================================== -->
     <script src="assets/js/jquery.min.js" defer></script>
