@@ -1,0 +1,53 @@
+/* ==== FOOTER DESKTOP (≥ 992px) ==== */
+@media (min-width: 992px) {
+  .wpo-upper-footer .row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 40px;
+  }
+
+  .wpo-upper-footer .col {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+
+/* ==== FOOTER MOBILE (≤ 767px) ==== */
+@media (max-width: 767px) {
+  /* Todo en columna, en el orden del HTML */
+  .wpo-upper-footer .row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .wpo-upper-footer .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Alineamos todo a la izquierda para que se lea prolijo */
+  .wpo-site-footer .widget,
+  .wpo-site-footer .widget-title h3,
+  .wpo-site-footer p,
+  .wpo-site-footer ul {
+    text-align: left;
+  }
+
+  /* Logo más chico y con margen abajo */
+  .wpo-site-footer .logo {
+    margin-bottom: 12px;
+  }
+
+  .wpo-site-footer .logo img {
+    max-width: 70px;
+    height: auto;
+  }
+
+  .wpo-site-footer .wpo-lower-footer{
+    margin-bottom: 100px;
+  }
+}

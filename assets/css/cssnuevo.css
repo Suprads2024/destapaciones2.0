@@ -7,6 +7,21 @@
     flex-wrap: wrap; /* por si en mobile no entra */
 }
 
+
+.menu-item-has-children .sub-menu {
+    display: none;
+    padding-left: 15px;
+}
+
+.menu-item-has-children.open .sub-menu {
+    display: block;
+}
+
+.menu-item-has-children .arrow {
+    font-size: 10px;
+    margin-left: 4px;
+}
+
 /* Texto general */
 .manual-numbers-inline span {
     color: #e8f1ff; /* blanco suave con buen contraste */
@@ -347,4 +362,12 @@
     .cta-final-title {
         font-size: 28px;
     }
+}
+.coverage-note {
+    color: white;
+    margin-top: 24px;
+    font-size: 0.98rem;
+    font-weight: 800;
+    text-align: center;
+    opacity: 0.9; /* opcional, para que no grite tanto */
 }

@@ -556,7 +556,7 @@
 .main-nav {
     display: flex;
     justify-content: center;
-    gap: 28px;
+    gap: 10px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -633,20 +633,6 @@
 }
 
 
-
-/* ---- Footer layout (desktop) ---- */
-.wpo-upper-footer .row{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:flex-start;   /* alineamos por la izquierda y usamos auto para empujar */
-  column-gap: 40px;             /* espacio horizontal entre columnas */
-}
-
-/* Aseguramos que cada col se comporte como bloque vertical */
-.wpo-upper-footer .row > [class*="col"]{
-  display:flex;
-  flex-direction:column;
-}
 
 /* Orden explícito de columnas por tipo de widget */
 .wpo-upper-footer .about-widget{          /* Logo + Nosotros (izquierda) */
@@ -1011,4 +997,189 @@ font-size: 25px;
   margin: 0;
   color: #374151;
   line-height: 1.6;
+}
+
+
+
+:root {
+    --bg-body: #0b1622;
+    --bg-card: #182334;
+    --txt-main: #f4f7fb;
+    --txt-muted: #c3cede;
+    --accent: #204d6e;      /* azul de los botones de llamada */
+    --accent-soft: #223857;
+    --border-soft: rgba(255, 255, 255, 0.06);
+    --radius: 16px;
+}
+
+
+/* Layout contenedor */
+.legal-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+
+.legal-back {
+    font-size: 0.9rem;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.legal-back:hover {
+    text-decoration: underline;
+}
+
+/* Main */
+.legal-main {
+    padding: 40px 0 60px;
+}
+
+.legal-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-soft);
+    padding: 28px 22px 32px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+}
+
+/* Tipografía */
+.legal-card h1 {
+  color: white;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.legal-card h2 {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--txt-main);
+}
+
+.legal-card p {
+    margin-bottom: 10px;
+    color: var(--txt-muted);
+    font-size: 0.98rem;
+}
+
+.legal-card ul {
+    margin: 4px 0 10px 18px;
+    color: var(--txt-muted);
+    font-size: 0.96rem;
+}
+
+.legal-card li {
+    margin-bottom: 4px;
+}
+
+
+
+/* Responsive */
+@media (min-width: 768px) {
+    .legal-main {
+        padding: 60px 0 80px;
+    }
+
+    .legal-card {
+        padding: 36px 32px 40px;
+    }
+
+    .legal-card h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-header .legal-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .legal-back {
+        padding-top: 4px;
+    }
+}
+:root {
+    --bg-body: #0b1622;
+    --bg-card: #182334;
+    --txt-main: #f4f7fb;
+    --txt-muted: #c3cede;
+    --accent: #204d6e;
+    --border-soft: rgba(255, 255, 255, 0.06);
+    --radius: 16px;
+}
+
+/* Main layout */
+.legal-main {
+    padding: 40px 0 60px;
+}
+
+.legal-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.legal-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-soft);
+    padding: 28px 22px 32px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+}
+
+/* Typography */
+.legal-card h1 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.legal-card h2 {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--txt-main);
+}
+
+.legal-card p {
+    margin-bottom: 10px;
+    color: var(--txt-muted);
+    font-size: 0.98rem;
+}
+
+.legal-card ul {
+    margin: 4px 0 10px 18px;
+    color: var(--txt-muted);
+    font-size: 0.96rem;
+}
+
+.legal-card li {
+    margin-bottom: 4px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .legal-main {
+        padding: 60px 0 80px;
+    }
+
+    .legal-card {
+        padding: 36px 32px 40px;
+    }
+
+    .legal-card h1 {
+        font-size: 2rem;
+    }
 }
