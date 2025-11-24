@@ -53,268 +53,261 @@
         imagesrcset="assets/images/destapaciones/fondo2.webp" imagesizes="100vw" type="image/webp">
     <title> Servicio de Destapaciones</title>
 
+    <style id="critical.css">
+        /* Critical CSS: header, hero, and primary CTAs */
+        :root {
+            --primary: #204d6e;
+            --accent: #25d366;
+            --text-light: #ffffff;
+        }
 
-<link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/destapaciones.css" rel="stylesheet">
-    <link href="assets/css/deferred-custom.css" rel="stylesheet">
-  <style id="critical.css">/* Critical CSS: header, hero, and primary CTAs */
-:root {
-    --primary: #204d6e;
-    --accent: #25d366;
-    --text-light: #ffffff;
-}
+        /* Floating CTA buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 9999;
+        }
 
-/* Floating CTA buttons */
-.floating-buttons {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 9999;
-}
+        .float-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #fff;
+            padding: 12px 18px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            border: none;
+            cursor: pointer;
+        }
 
-.float-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-weight: 600;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #fff;
-    padding: 12px 18px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    border: none;
-    cursor: pointer;
-}
+        .call-float {
+            background-color: var(--primary);
+            border: 2px solid var(--primary);
+        }
 
-.call-float {
-    background-color: var(--primary);
-    border: 2px solid var(--primary);
-}
+        .call-float:hover {
+            background-color: #1b415e;
+            color: var(--text-light);
+        }
 
-.call-float:hover {
-    background-color: #1b415e;
-    color: var(--text-light);
-}
+        .whatsapp-float {
+            background-color: var(--accent);
+            border: 2px solid var(--accent);
+        }
 
-.whatsapp-float {
-    background-color: var(--accent);
-    border: 2px solid var(--accent);
-}
+        .whatsapp-float:hover {
+            background-color: #1ebe5b;
+            transform: translateY(-2px);
+            color: var(--text-light);
+        }
 
-.whatsapp-float:hover {
-    background-color: #1ebe5b;
-    transform: translateY(-2px);
-    color: var(--text-light);
-}
+        @media (max-width: 767px) {
+            .floating-buttons {
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: max(12px, env(safe-area-inset-bottom));
+                padding: 0 14px;
+                flex-direction: column;
+                gap: 12px;
+            }
 
-@media (max-width: 767px) {
-    .floating-buttons {
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: max(12px, env(safe-area-inset-bottom));
-        padding: 0 14px;
-        flex-direction: column;
-        gap: 12px;
-    }
+            .float-btn {
+                width: 100%;
+                border-radius: 10px;
+                padding: 14px 16px;
+                box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+            }
 
-    .float-btn {
-        width: 100%;
-        border-radius: 10px;
-        padding: 14px 16px;
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-    }
+            .header-right,
+            .call-btn {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+            }
+        }
 
-    .header-right,
-    .call-btn {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-    }
-}
+        /* Branding inline with logo */
+        .brand-group {
+            display: flex;
+            align-items: center;
+        }
 
-/* Branding inline with logo */
-.brand-group {
-    display: flex;
-    align-items: center;
-}
+        .brand-logo {
+            width: 60px;
+            height: auto;
+            display: block;
+        }
 
-.brand-logo {
-    width: 60px;
-    height: auto;
-    display: block;
-}
+        .brand-text {
+            color: #36b5ff;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-left: -10px;
+        }
 
-.brand-text {
-    color: #36b5ff;
-    font-weight: 700;
-    font-size: 18px;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    margin-left: -10px;
-}
+        @media (max-width: 767px) {
+            .brand-group {
+                margin-left: -5px;
+            }
 
-@media (max-width: 767px) {
-    .brand-group {
-        margin-left: -5px;
-    }
+            .brand-logo {
+                width: 48px;
+            }
 
-    .brand-logo {
-        width: 48px;
-    }
+            .brand-text {
+                font-size: 15px;
+            }
+        }
 
-    .brand-text {
-        font-size: 15px;
-    }
-}
+        /* Hero layout and typography */
+        .wpo-hero-section-1 {
+            display: flex;
+            align-items: center;
+            min-height: 78vh;
+        }
 
-/* Hero layout and typography */
-.wpo-hero-section-1 {
-    display: flex;
-    align-items: center;
-    min-height: 78vh;
-}
+        .wpo-hero-section-1 .container {
+            display: flex;
+            justify-content: center;
+        }
 
-.wpo-hero-section-1 .container {
-    display: flex;
-    justify-content: center;
-}
+        .wpo-hero-section-text {
+            text-align: center;
+            margin-inline: auto;
+            max-width: 980px;
+        }
 
-.wpo-hero-section-text {
-    text-align: center;
-    margin-inline: auto;
-    max-width: 980px;
-}
+        .wpo-hero-title h2 {
+            color: var(--text-light);
+            font-weight: 800;
+            line-height: 1.04;
+            font-size: clamp(40px, 7vw, 92px);
+            text-shadow: 0 6px 28px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.35);
+            margin: 0 0 0.2em;
+        }
 
-.wpo-hero-title h2 {
-    color: var(--text-light);
-    font-weight: 800;
-    line-height: 1.04;
-    font-size: clamp(40px, 7vw, 92px);
-    text-shadow: 0 6px 28px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.35);
-    margin: 0 0 0.2em;
-}
+        .wpo-hero-title h2 span {
+            color: #2f7cff;
+        }
 
-.wpo-hero-title h2 span {
-    color: #2f7cff;
-}
+        .wpo-hero-des p {
+            color: #e9eef6;
+            font-size: clamp(16px, 1.8vw, 20px);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+            margin-bottom: 16px;
+        }
 
-.wpo-hero-des p {
-    color: #e9eef6;
-    font-size: clamp(16px, 1.8vw, 20px);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-    margin-bottom: 16px;
-}
+        /* Primary CTAs */
+        .cta-block {
+            display: grid;
+            gap: 14px;
+            justify-items: center;
+            margin: 10px 0 0;
+        }
 
-/* Primary CTAs */
-.cta-block {
-    display: grid;
-    gap: 14px;
-    justify-items: center;
-    margin: 10px 0 0;
-}
+        .cta-button-container {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
 
-.cta-button-container {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-}
+        .btn-urgencias,
+        .btn-whatsapp {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 210px;
+        }
 
-.btn-urgencias,
-.btn-whatsapp {
-    padding: 12px 28px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-width: 210px;
-}
+        .btn-urgencias {
+            background-color: var(--primary);
+            color: #fff;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 6px rgba(32, 77, 110, 0.25);
+        }
 
-.btn-urgencias {
-    background-color: var(--primary);
-    color: #fff;
-    border: 2px solid var(--primary);
-    box-shadow: 0 0 6px rgba(32, 77, 110, 0.25);
-}
+        .btn-urgencias:hover {
+            text-decoration: none;
+            color: #fff;
+            transform: translateY(-2px);
+        }
 
-.btn-urgencias:hover {
-    text-decoration: none;
-    color: #fff;
-    transform: translateY(-2px);
-}
+        .btn-whatsapp {
+            background: var(--accent);
+            color: #fff;
+            border: 2px solid var(--accent);
+        }
 
-.btn-whatsapp {
-    background: var(--accent);
-    color: #fff;
-    border: 2px solid var(--accent);
-}
+        .btn-whatsapp:hover {
+            background: #1da851;
+            border-color: #1da851;
+            box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
 
-.btn-whatsapp:hover {
-    background: #1da851;
-    border-color: #1da851;
-    box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
-    transform: translateY(-2px);
-    text-decoration: none;
-}
+        .phone-icon,
+        .whatsapp-icon {
+            font-size: 18px;
+        }
 
-.phone-icon,
-.whatsapp-icon {
-    font-size: 18px;
-}
+        @media (max-width: 620px) {
+            .cta-button-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
 
-@media (max-width: 620px) {
-    .cta-button-container {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-    }
-
-    .btn-urgencias,
-    .btn-whatsapp {
-        width: 100%;
-        min-width: unset;
-        padding: 14px 18px;
-        font-size: 17px;
-    }
-}</style>
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/cssnuevo.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
-
-    <!-- 🔹 CSS CRÍTICO (se carga normal, no diferido) -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/destapaciones.css">
-
-
-    <!-- 🔹 CSS NO CRÍTICO (se precarga y aplica cuando termina) -->
-    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="assets/css/style.css">
-    </noscript>
-
+            .btn-urgencias,
+            .btn-whatsapp {
+                width: 100%;
+                min-width: unset;
+                padding: 14px 18px;
+                font-size: 17px;
+            }
+        }
+    </style>
+    <!-- CSS no crítico: precarga y aplicación diferida -->
+    <link rel="preload" href="assets/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/font-awesome.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/destapaciones.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="assets/css/cssnuevo.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="assets/css/cssnuevo.css">
-    </noscript>
-
     <link rel="preload" href="assets/css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/deferred-custom.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/destapaciones.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/cssnuevo.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
+        <link rel="stylesheet" href="assets/css/deferred-custom.css">
     </noscript>
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -994,7 +987,7 @@
                         <!-- Col 1: Logo -->
                         <div class="col col-lg-4 col-md-6 col-sm-12">
                             <div class="widget about-widget">
-                                
+
                                 <p>
                                     Somos especialistas en destapaciones de cañerías y cloacas.
                                     Atendemos hogares, comercios y consorcios. Servicio rápido,
