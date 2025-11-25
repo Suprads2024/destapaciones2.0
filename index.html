@@ -52,31 +52,1526 @@
     <link rel="preload" as="image" href="assets/images/destapaciones/fondo2.webp"
         imagesrcset="assets/images/destapaciones/fondo2.webp" imagesizes="100vw" type="image/webp">
     <title> Servicio de Destapaciones</title>
-<style id="critical.css">:root{--primary:#204d6e;--accent:#25d366;--text-light:#ffffff}.floating-buttons{position:fixed;bottom:30px;right:30px;display:flex;flex-direction:column;gap:12px;z-index:9999}.float-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;border-radius:8px;text-decoration:none;color:#fff;padding:12px 18px;font-size:16px;transition:all 0.3s ease;box-shadow:0 4px 10px rgb(0 0 0 / .25);border:none;cursor:pointer}.call-float{background-color:var(--primary);border:2px solid var(--primary)}.call-float:hover{background-color:#1b415e;color:var(--text-light)}.whatsapp-float{background-color:var(--accent);border:2px solid var(--accent)}.whatsapp-float:hover{background-color:#1ebe5b;transform:translateY(-2px);color:var(--text-light)}@media (max-width:767px){.floating-buttons{position:fixed;left:0;right:0;bottom:max(12px, env(safe-area-inset-bottom));padding:0 14px;flex-direction:column;gap:12px}.float-btn{width:100%;border-radius:10px;padding:14px 16px;box-shadow:0 8px 18px rgb(0 0 0 / .18)}.header-right,.call-btn{display:none!important;visibility:hidden!important;opacity:0!important}}.brand-group{display:flex;align-items:center}.brand-logo{width:60px;height:auto;display:block}.brand-text{color:#36b5ff;font-weight:700;font-size:18px;letter-spacing:.4px;text-transform:uppercase;white-space:nowrap;margin-left:-10px}@media (max-width:767px){.brand-group{margin-left:-5px}.brand-logo{width:48px}.brand-text{font-size:15px}}.wpo-hero-section-1{display:flex;align-items:center;min-height:78vh}.wpo-hero-section-1 .container{display:flex;justify-content:center}.wpo-hero-section-text{text-align:center;margin-inline:auto;max-width:980px}.wpo-hero-title h2{color:var(--text-light);font-weight:800;line-height:1.04;font-size:clamp(40px, 7vw, 92px);text-shadow:0 6px 28px rgb(0 0 0 / .35),0 2px 6px rgb(0 0 0 / .35);margin:0 0 .2em}.wpo-hero-title h2 span{color:#2f7cff}.wpo-hero-des p{color:#e9eef6;font-size:clamp(16px, 1.8vw, 20px);text-shadow:0 2px 8px rgb(0 0 0 / .35);margin-bottom:16px}.cta-block{display:grid;gap:14px;justify-items:center;margin:10px 0 0}.cta-button-container{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;width:100%}.btn-urgencias,.btn-whatsapp{padding:12px 28px;border-radius:8px;font-size:16px;font-weight:700;text-decoration:none;cursor:pointer;transition:all 0.25s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:210px}.btn-urgencias{background-color:var(--primary);color:#fff;border:2px solid var(--primary);box-shadow:0 0 6px rgb(32 77 110 / .25)}.btn-urgencias:hover{text-decoration:none;color:#fff;transform:translateY(-2px)}.btn-whatsapp{background:var(--accent);color:#fff;border:2px solid var(--accent)}.btn-whatsapp:hover{background:#1da851;border-color:#1da851;box-shadow:0 0 10px rgb(37 211 102 / .4);transform:translateY(-2px);text-decoration:none}.phone-icon,.whatsapp-icon{font-size:18px}@media (max-width:620px){.cta-button-container{flex-direction:column;align-items:stretch;gap:10px}.btn-urgencias,.btn-whatsapp{width:100%;min-width:unset;padding:14px 18px;font-size:17px}}</style>
+ 
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+<link href="assets/css/destapaciones.css" rel="stylesheet">
+   <style id="critical-css">
+        /* === ESTILO GENERAL DE LOS BOTONES FLOTANTES === */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 9999;
+        }
 
+        .float-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #fff;
+            padding: 12px 18px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Colores y detalles */
+        .call-float {
+            background-color: #204d6e;
+            /* solicitado */
+            border: 2px solid #204d6e;
+        }
+
+        .call-float:hover {
+            background-color: #1b415e;
+            color: white;
+        }
+
+        /* WhatsApp */
+        .whatsapp-float {
+            background-color: #25d366;
+            border: 2px solid #25d366;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1ebe5b;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* === 🔹 MOBILE: botones ocupan todo el ancho === */
+        @media (max-width: 767px) {
+            .floating-buttons {
+                bottom: 0;
+                right: 0;
+                left: 0;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .floating-buttons {
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: max(12px, env(safe-area-inset-bottom));
+                /* respeta notch */
+                padding: 0 14px;
+                /* separa de los bordes laterales */
+                gap: 12px;
+                /* separación entre los dos botones */
+            }
+
+
+            .float-btn {
+                width: 100%;
+                border-radius: 10px;
+                /* aspecto a botón */
+                padding: 14px 16px;
+                box-shadow: 0 8px 18px rgba(0, 0, 0, .18);
+            }
+
+
+
+            /* Color y separación mobile */
+            .call-float {
+                border: none;
+            }
+
+
+            /* Colores y detalles */
+            .call-float {
+                background-color: #204d6e;
+                /* solicitado */
+                border: 2px solid #204d6e;
+            }
+
+            .call-float:hover {
+                background-color: #1b415e;
+                color: white;
+            }
+
+            .whatsapp-float {
+                background-color: #25d366;
+                border: 2px solid #25d366;
+            }
+
+            .whatsapp-float:hover {
+                background-color: #1ebe5b;
+                color: white;
+            }
+        }
+
+
+
+
+
+
+
+        /* === 🔹 MOBILE: botones ocupan todo el ancho === */
+        @media (max-width: 767px) {
+
+
+
+
+
+            .whatsapp-float {
+                border: none;
+            }
+
+            /* Ocultar botones del header */
+            .header-right,
+            .call-btn {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+            }
+        }
+
+
+
+
+        /* Contenedor del logo + texto */
+        .brand-group {
+            display: flex;
+            align-items: center;
+
+        }
+
+        /* Logo reducido */
+        .brand-logo {
+            width: 60px;
+            /* ajustá según tu preferencia */
+            height: auto;
+            display: block;
+        }
+
+        /* Texto a la derecha del logo */
+        .brand-text {
+            color: #36b5ff;
+            /* celeste */
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-left: -10px;
+        }
+
+        /* Responsivo para pantallas chicas */
+        @media (max-width: 767px) {
+            .brand-group {
+                margin-left: -5px;
+            }
+
+            .brand-logo {
+                width: 48px;
+            }
+
+            .brand-text {
+                font-size: 15px;
+            }
+        }
+
+        /* ====== Layout general ====== */
+        .cta-block {
+            display: grid;
+            gap: 14px;
+            justify-items: center;
+            margin: 10px 0 0;
+        }
+
+
+
+        /* Ícono tarjeta */
+        .card-icon {
+            font-size: 16px;
+        }
+
+        /* Respeto a usuarios con menos animación */
+        @media (prefers-reduced-motion: reduce) {
+            .payment-badge::after {
+                animation: none;
+            }
+        }
+
+        /* ====== Contenedor de botones ====== */
+        .cta-button-container {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        /* ====== Botón Urgencias ====== */
+        .btn-urgencias {
+            background-color: #204d6e !important;
+            color: #fff;
+            border: 2px solid #204d6e !important;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 0 6px rgba(179, 38, 30, 0.25);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 210px;
+        }
+
+        .btn-urgencias:hover {
+            text-decoration: none;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ====== Botón WhatsApp ====== */
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #fff;
+            border: 2px solid #25D366;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 210px;
+        }
+
+        .btn-whatsapp:hover {
+            text-decoration: none;
+            color: white;
+            background-color: #1da851;
+            border-color: #1da851;
+            box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .phone-icon,
+        .whatsapp-icon {
+            font-size: 18px;
+        }
+
+        /* ====== Responsivo ====== */
+        @media (max-width: 620px) {
+            .payment-badge {
+                font-size: 13px;
+                padding: 10px 16px;
+                text-align: center;
+            }
+
+            .cta-button-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .btn-urgencias,
+            .btn-whatsapp {
+                width: 100%;
+                min-width: unset;
+                padding: 14px 18px;
+                font-size: 17px;
+            }
+        }
+
+
+        /* ===== Hero centrado y legible ===== */
+        .wpo-hero-section-1 {
+            display: flex;
+            align-items: center;
+            /* centra vertical */
+            min-height: 78vh;
+        }
+
+        .wpo-hero-section-1 .container {
+            display: flex;
+            justify-content: center;
+            /* centra horizontal */
+        }
+
+        .wpo-hero-section-text {
+            text-align: center;
+            margin-inline: auto;
+            max-width: 980px;
+        }
+
+        /* Título en 2 líneas, color y sombra para contraste */
+        .wpo-hero-title h2 {
+            color: #ffffff;
+            /* mejor lectura */
+            font-weight: 800;
+            line-height: 1.04;
+            font-size: clamp(40px, 7vw, 92px);
+            text-shadow: 0 6px 28px rgba(0, 0, 0, .35), 0 2px 6px rgba(0, 0, 0, .35);
+            margin: 0 0 .2em;
+        }
+
+        .wpo-hero-title h2 span {
+            color: #2f7cff;
+            /* acento azul visible */
+        }
+
+        /* Descripción con mejor contraste */
+        .wpo-hero-des p {
+            color: #e9eef6;
+            font-size: clamp(16px, 1.8vw, 20px);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+            margin-bottom: 16px;
+        }
+
+        /* ===== Badge (ya lo tenías) ===== */
+        .cta-block {
+            display: grid;
+            gap: 14px;
+            justify-items: center;
+        }
+
+
+
+        /* ===== Botones: fila en desktop, columna en mobile ===== */
+        .cta-button-container {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-urgencias,
+        .btn-whatsapp {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all .25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 210px;
+        }
+
+        .btn-urgencias {
+            background-color: #b3261e;
+            color: #fff;
+            border: 2px solid #b3261e;
+            box-shadow: 0 0 6px rgba(179, 38, 30, .25);
+        }
+
+        .btn-urgencias:hover {
+            background: #961e18;
+            border-color: #961e18;
+            box-shadow: 0 0 12px rgba(179, 38, 30, .45);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: #fff;
+            border: 2px solid #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1da851;
+            border-color: #1da851;
+            box-shadow: 0 0 10px rgba(37, 211, 102, .4);
+            transform: translateY(-2px);
+        }
+
+        .phone-icon,
+        .whatsapp-icon {
+            font-size: 18px;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .cta-button-container {
+                flex-direction: column;
+                /* columna en mobile */
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .btn-urgencias,
+            .btn-whatsapp {
+
+                display: none;
+            }
+
+            .payment-badge {
+                font-size: 13px;
+                padding: 10px 16px;
+            }
+
+            .wpo-hero-title h2 {
+                font-size: clamp(34px, 10vw, 54px);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .payment-badge::after {
+                animation: none;
+            }
+        }
+
+
+
+        /* Contenedor del camión animado */
+        .truck-anim {
+            position: relative;
+            width: 100px;
+            /* ajustá según tamaño */
+            height: 70px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: truckBounce 3s ease-in-out infinite;
+        }
+
+        .truck-anim img {
+            width: 100%;
+            height: auto;
+            filter: brightness(0) invert(1);
+            /* 🔹 convierte negro → blanco */
+            animation: truckMove 2.5s ease-in-out infinite;
+        }
+
+
+        /* Efecto de "viento" detrás del camión */
+        .truck-anim .wind {
+            position: absolute;
+            right: 100%;
+            /* detrás del camión */
+            width: 35px;
+            height: 3px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(214, 214, 214, 0.6));
+            border-radius: 5px;
+            opacity: 0.7;
+            animation: windFlow 1.8s linear infinite;
+        }
+
+        /* Tres ráfagas con distintos tiempos */
+        .truck-anim .wind.delay1 {
+            top: 30%;
+            animation-delay: 0.6s;
+        }
+
+        .truck-anim .wind.delay2 {
+            top: 60%;
+            animation-delay: 1.2s;
+        }
+
+        /* ===== ANIMACIONES ===== */
+
+        /* Pequeño vaivén del camión */
+        @keyframes truckMove {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(4px);
+            }
+        }
+
+        /* Suave rebote vertical */
+        @keyframes truckBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        /* Ráfagas que salen desde atrás hacia la izquierda */
+        @keyframes windFlow {
+            0% {
+                transform: translateX(0);
+                opacity: 0.8;
+                width: 35px;
+            }
+
+            100% {
+                transform: translateX(-40px);
+                opacity: 0;
+                width: 20px;
+            }
+        }
+
+        /* Alineaciones rápidas */
+        .header-right {
+            display: flex;
+        }
+
+        .header-right.justify-end {
+            justify-content: flex-end;
+        }
+
+        /* Logo + texto */
+        .brand-group {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .brand-logo {
+            width: 42px;
+            height: auto;
+            display: block;
+        }
+
+        /* más chico para mobile */
+        .brand-text {
+            color: #36b5ff;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: .3px;
+            white-space: nowrap;
+        }
+
+        /* Botón urgente */
+        .call-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #b3261e;
+            color: #fff !important;
+            border: 2px solid #b3261e;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            line-height: 1;
+            transition: .25s;
+        }
+
+        .call-btn:hover {
+            background: #961e18;
+            border-color: #961e18;
+            transform: translateY(-1px);
+        }
+
+        /* Nav desktop */
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-nav a {
+            font-weight: 600;
+            color: #0c2239;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            text-decoration: none;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #2f7cff;
+        }
+
+        /* Ajustes responsivos */
+        @media (min-width: 992px) {
+            .brand-logo {
+                width: 56px;
+            }
+
+            .brand-text {
+                font-size: 16px;
+            }
+        }
+
+        /* 🔹 Forzar visibilidad del botón "Urgencia" en todas las resoluciones */
+        .header-right,
+        .header-call,
+        .call-btn {
+            display: inline-flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .header-right {
+            justify-content: flex-end !important;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* 🔹 Ajuste para versión mobile */
+        @media (max-width: 767px) {
+            .header-right {
+                position: relative;
+                z-index: 999;
+                /* se asegura de no quedar tapado */
+            }
+
+            .call-btn {
+                padding: 8px 14px;
+                font-size: 14px;
+                border-radius: 6px;
+            }
+
+            /* si tu tema empuja elementos del header, evitamos colapsos */
+            .wpo-site-header .row.align-items-center {
+                flex-wrap: nowrap !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+
+            .header-right,
+            .header-call,
+            .call-btn {
+                display: inline-flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                height: auto !important;
+            }
+        }
+
+
+
+        /* Orden explícito de columnas por tipo de widget */
+        .wpo-upper-footer .about-widget {
+            /* Logo + Nosotros (izquierda) */
+            order: 1;
+        }
+
+        .wpo-upper-footer .wpo-service-link-widget {
+            /* Contacto (centro) */
+            order: 2;
+        }
+
+        /* Servicios (derecha): empujamos esta columna hacia el borde derecho */
+        .wpo-upper-footer .link-widget {
+            order: 3;
+        }
+
+        .wpo-upper-footer .row>[class*="col"]:has(.link-widget) {
+            margin-left: auto;
+            /* 🔹 lleva “Servicios” al extremo derecho */
+        }
+
+        /* Opcional: alineaciones de texto */
+        .wpo-upper-footer .about-widget,
+        .wpo-upper-footer .wpo-service-link-widget,
+        .wpo-upper-footer .link-widget {
+            text-align: left;
+        }
+
+        /* ---- Responsive: en tablet/móvil apilado normal ---- */
+        @media (max-width: 991.98px) {
+            .wpo-upper-footer .row {
+                justify-content: flex-start;
+                column-gap: 0;
+            }
+
+            .wpo-upper-footer .row>[class*="col"] {
+                margin-left: 0 !important;
+                order: initial;
+                /* vuelve al flujo natural en mobile */
+            }
+        }
+
+
+
+        /* ===== Estilos Sección Hero Servicios ===== */
+        :root {
+            /* Ajustá estos colores a tu paleta */
+            --c-primary: #204d6e;
+            /* azul llamada */
+            --c-primary-700: #17374e;
+            --c-accent: #10b981;
+            /* acento/ok */
+            --c-dark: #0f172a;
+            --c-text: #243248;
+            --c-muted: #6b7a90;
+            --c-bg: #f7fbff;
+        }
+
+        .hero-service {
+            background: radial-gradient(1200px 600px at 10% 0%, var(--c-bg), #fff 60%);
+            padding: clamp(48px, 7vw, 96px) 0;
+            overflow: hidden;
+        }
+
+        .hero-service .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding-inline: 20px;
+        }
+
+        .hero-service__wrap {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: clamp(24px, 4vw, 56px);
+            align-items: center;
+        }
+
+        .hero-service__badge {
+            display: inline-block;
+            background: #e8f1ff;
+            color: var(--c-primary);
+            font-weight: 700;
+            letter-spacing: .2px;
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: .92rem;
+            margin-bottom: 14px;
+        }
+
+        .hero-service__title {
+
+            font-weight: 800;
+            line-height: 1.05;
+            color: var(--c-dark);
+            font-size: clamp(32px, 5vw, 48px);
+            margin: 0 0 10px 0;
+        }
+
+        .hero-service__title span {
+            color: var(--c-primary);
+        }
+
+        .hero-service__lead {
+            color: var(--c-text);
+            font-size: clamp(16px, 1.5vw, 18px);
+            line-height: 1.6;
+            margin: 0 0 18px 0;
+        }
+
+        .hero-service__features {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(220px, 1fr));
+            gap: 12px 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px 0;
+        }
+
+        .hero-service__features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--c-text);
+            font-weight: 600;
+        }
+
+        .hero-service__features .ico {
+            width: 26px;
+            height: 26px;
+            flex: 0 0 26px;
+            display: grid;
+            place-items: center;
+            background: #eafaf3;
+            border-radius: 8px;
+            margin-top: 2px;
+        }
+
+        .hero-service__features .ico svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--c-accent);
+        }
+
+        .hero-service__cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 8px 0 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 16px;
+            border-radius: 14px;
+            font-weight: 800;
+            letter-spacing: .2px;
+            text-decoration: none;
+            transition: transform .12s ease, box-shadow .12s ease, background .2s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
+        }
+
+        .btn .btn-ico {
+            width: 22px;
+            height: 22px;
+            display: grid;
+            place-items: center;
+        }
+
+        .btn .btn-ico svg {
+            width: 100%;
+            height: 100%;
+            fill: #fff;
+        }
+
+        .btn.phone {
+            background: var(--c-primary);
+            color: #fff;
+        }
+
+        .btn.phone:hover {
+            background: var(--c-primary-700);
+            transform: translateY(-1px);
+        }
+
+        .btn.wa {
+            background: #25D366;
+            color: #fff;
+        }
+
+        .btn.wa:hover {
+            filter: brightness(.95);
+            transform: translateY(-1px);
+        }
+
+        .hero-service__mini {
+            color: var(--c-muted);
+            font-size: .95rem;
+            margin-top: 8px;
+        }
+
+        .hero-service__media {
+            position: relative;
+            margin: 0;
+            isolation: isolate;
+        }
+
+        .hero-service__media::after {
+            content: "";
+            position: absolute;
+            inset: -24px -24px -24px 20%;
+            background: radial-gradient(600px 320px at 80% 20%, rgba(32, 77, 110, .14), transparent 60%);
+            z-index: -1;
+        }
+
+        .hero-service__media img {
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+            object-fit: cover;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, .15);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 992px) {
+            .hero-service__wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-service__media {
+                order: -1;
+            }
+
+            .hero-service__features {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-service {
+                padding: 48px 0 36px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                width: 100%;
+                justify-content: center;
+
+            }
+
+            .hero-service__title {
+                font-size: 25px;
+            }
+        }
+
+
+        /* Bloque general */
+        .contact-block {
+            width: 100%;
+            background: #fff;
+            padding: 48px 16px 64px;
+            border-top: 1px solid #eef2f7;
+        }
+
+        .contact-wrap {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        /* Encabezado */
+        .contact-title {
+            text-align: center;
+            margin: 0 0 6px;
+            font-weight: 800;
+            color: #1f2937;
+            font-size: 32px;
+        }
+
+        .contact-sub {
+            text-align: center;
+            color: #6b7280;
+            margin: 0 0 24px;
+        }
+
+        /* Formulario */
+        .contact-form {
+            width: 100%;
+        }
+
+        .contact-form .row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 15px;
+            color: #111827;
+            background: #fff;
+            transition: border-color .2s ease, box-shadow .2s ease;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #93a3b5;
+            box-shadow: 0 0 0 3px rgba(147, 163, 181, .2);
+        }
+
+        /* Footer con reCaptcha + botón */
+        .form-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 8px;
+        }
+
+        .recaptcha-placeholder {
+            flex: 1;
+        }
+
+        .fake-recaptcha {
+            width: 260px;
+            height: 78px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* Botón centrado como en la captura */
+        .btn-send {
+            min-width: 120px;
+            padding: 10px 22px;
+            border: none;
+            border-radius: 6px;
+            background: #6b879b;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: filter .2s ease, transform .08s ease;
+            margin-left: auto;
+            /* empuja a la derecha */
+        }
+
+        .btn-send:hover {
+            filter: brightness(.95);
+        }
+
+        .btn-send:active {
+            transform: translateY(1px);
+        }
+
+        /* Mensajes */
+        .messages {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width:768px) {
+            .contact-form .row-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .form-footer {
+                flex-direction: column;
+                gap: 14px;
+                align-items: flex-start;
+            }
+
+            .btn-send {
+                margin-left: 0;
+                align-self: center;
+            }
+        }
+
+        .faq-section {
+            width: 100%;
+            background: #f9fafb;
+            padding: 60px 20px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 24px;
+        }
+
+        /* Preguntas */
+        .faq-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            background: #fff;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .faq-item.open {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e3a8a;
+            padding: 14px 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-icon {
+            font-size: 1.4rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.3s ease;
+            background: #fff;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding: 0 18px 16px;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+
+
+        :root {
+            --bg-body: #0b1622;
+            --bg-card: #182334;
+            --txt-main: #f4f7fb;
+            --txt-muted: #c3cede;
+            --accent: #204d6e;
+            /* azul de los botones de llamada */
+            --accent-soft: #223857;
+            --border-soft: rgba(255, 255, 255, 0.06);
+            --radius: 16px;
+        }
+
+
+        /* Layout contenedor */
+        .legal-container {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+
+        .legal-back {
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .legal-back:hover {
+            text-decoration: underline;
+        }
+
+        /* Main */
+        .legal-main {
+            padding: 40px 0 60px;
+        }
+
+        .legal-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-soft);
+            padding: 28px 22px 32px;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Tipografía */
+        .legal-card h1 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .legal-card h2 {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--txt-main);
+        }
+
+        .legal-card p {
+            margin-bottom: 10px;
+            color: var(--txt-muted);
+            font-size: 0.98rem;
+        }
+
+        .legal-card ul {
+            margin: 4px 0 10px 18px;
+            color: var(--txt-muted);
+            font-size: 0.96rem;
+        }
+
+        .legal-card li {
+            margin-bottom: 4px;
+        }
+
+
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .legal-main {
+                padding: 60px 0 80px;
+            }
+
+            .legal-card {
+                padding: 36px 32px 40px;
+            }
+
+            .legal-card h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .legal-header .legal-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .legal-back {
+                padding-top: 4px;
+            }
+        }
+
+        :root {
+            --bg-body: #0b1622;
+            --bg-card: #182334;
+            --txt-main: #f4f7fb;
+            --txt-muted: #c3cede;
+            --accent: #204d6e;
+            --border-soft: rgba(255, 255, 255, 0.06);
+            --radius: 16px;
+        }
+
+        /* Main layout */
+        .legal-main {
+            padding: 40px 0 60px;
+        }
+
+        .legal-container {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .legal-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-soft);
+            padding: 28px 22px 32px;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Typography */
+        .legal-card h1 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .legal-card h2 {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--txt-main);
+        }
+
+        .legal-card p {
+            margin-bottom: 10px;
+            color: var(--txt-muted);
+            font-size: 0.98rem;
+        }
+
+        .legal-card ul {
+            margin: 4px 0 10px 18px;
+            color: var(--txt-muted);
+            font-size: 0.96rem;
+        }
+
+        .legal-card li {
+            margin-bottom: 4px;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .legal-main {
+                padding: 60px 0 80px;
+            }
+
+            .legal-card {
+                padding: 36px 32px 40px;
+            }
+
+            .legal-card h1 {
+                font-size: 2rem;
+            }
+        }
+
+
+        /* ⭐⭐⭐⭐⭐ Estrellas */
+        .rating-stars {
+            font-size: 28px;
+            color: #ffd700;
+            /* Amarillo estrellas */
+
+            font-weight: 700;
+        }
+
+        .arrival-text {
+            font-size: 20px;
+            color: #fff;
+            margin: 0 auto 18px;
+            /* Centrado horizontal */
+            font-weight: 800;
+
+            text-align: center;
+            /* Centra el texto dentro del bloque */
+        }
+
+        @media (max-width: 767px) {
+
+
+            .arrival-text {
+                font-size: 20px;
+                color: #fff;
+                margin: 0 auto 18px;
+                /* Centrado horizontal */
+
+                max-width: 350px;
+                /* Límite de ancho */
+                text-align: center;
+                /* Centra el texto dentro del bloque */
+            }
+        }
+
+        @media (max-width: 385px) {
+
+            .arrival-text {
+                font-size: 16px;
+            }
+        }
+
+        /* ===== NUEVO ESTILO DE BADGE ===== */
+        .payment-badge-alt {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: #fff;
+            background: linear-gradient(90deg, #2f7cff, #00c4ff);
+            border: 2px solid #ffffff40;
+            box-shadow: 0 0 18px rgba(47, 124, 255, 0.35);
+            overflow: hidden;
+            animation: badgePulse 2.8s infinite ease-in-out;
+        }
+
+        /* Pequeño reflejo diagonal que se mueve suavemente */
+        .payment-badge-alt::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -60%;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.5) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            animation: badgeShimmer 4s ease-in-out infinite;
+        }
+
+        /* Ícono tarjeta */
+        .payment-badge-alt .card-icon {
+            font-size: 16px;
+        }
+
+        /* Versión Mobile */
+        @media (max-width: 620px) {
+            .payment-badge-alt {
+                font-size: 10px;
+                padding: 10px 20px;
+            }
+        }
+
+
+        .checks-list {
+            list-style: none;
+            padding: 0;
+            margin: 18px auto 0;
+            /* centrado horizontal */
+            display: flex;
+            justify-content: center;
+            /* centra todos los ítems */
+            gap: 3px;
+            flex-wrap: wrap;
+            text-align: center;
+            /* por si algo se corta en mobile */
+            max-width: 800px;
+            /* opcional: mantiene proporción */
+        }
+
+        .checks-list li {
+            color: #fff;
+            font-weight: 800;
+            font-size: 20px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 767px) {
+
+            .checks-list {
+                margin: 0px;
+                max-width: 600px;
+                /* opcional: mantiene proporción */
+            }
+        }
+
+        @media (max-width: 385px) {
+            .checks-list li {
+                font-size: 15px;
+            }
+        }
+
+        .manual-numbers-inline {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            /* separación entre ambos */
+            margin-top: 14px;
+            font-size: 20px;
+            flex-wrap: wrap;
+            /* por si en mobile no entra */
+        }
+
+        /* Texto general */
+        .manual-numbers-inline span {
+            color: #e8f1ff;
+            /* blanco suave con buen contraste */
+        }
+
+        /* Etiquetas (Teléfono / WhatsApp) */
+        .manual-numbers-inline strong {
+            color: #2fb6ff;
+            /* celeste brillante de tu marca */
+            font-weight: 700;
+        }
+
+        @media (max-width: 767px) {
+
+            .manual-numbers-inline {
+                display: none;
+            }
+        }
+    </style>
     
-    <!-- CSS no crítico: precarga y aplicación diferida -->
-    <link rel="preload" href="assets/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/font-awesome.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/destapaciones.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/cssnuevo.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/deferred-custom.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/destapaciones.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/cssnuevo.css">
-        <link rel="stylesheet" href="assets/css/responsive.css">
-        <link rel="stylesheet" href="assets/css/deferred-custom.css">
-    </noscript>
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/cssnuevo.css" rel="stylesheet">
+<link href="assets/css/responsive.css" rel="stylesheet">
 
+
+<!-- 🔹 CSS NO CRÍTICO (se precarga y aplica cuando termina) -->
+<link rel="preload"
+      href="assets/css/style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+
+<link rel="preload"
+      href="assets/css/cssnuevo.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/css/cssnuevo.css"></noscript>
+
+<link rel="preload"
+      href="assets/css/responsive.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/css/responsive.css"></noscript>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
+
 
 <body>
     <!-- Google Tag Manager (noscript) -->
